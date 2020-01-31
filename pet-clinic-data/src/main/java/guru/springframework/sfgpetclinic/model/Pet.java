@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @NoArgsConstructor
 @Data
-public class Pet {
+public class Pet  extends BaseEntity {
     PetType petType;
     LocalDate birthDates;
     Owner owner;
