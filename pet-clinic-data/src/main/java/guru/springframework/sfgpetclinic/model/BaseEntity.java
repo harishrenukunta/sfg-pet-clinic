@@ -1,6 +1,8 @@
 package guru.springframework.sfgpetclinic.model;
 
-public abstract class BaseEntity {
+import java.io.Serializable;
+
+public abstract class BaseEntity implements Serializable {
 
     private Long id;
 
