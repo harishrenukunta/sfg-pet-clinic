@@ -4,6 +4,7 @@ import java.util.Set;
 
 public interface CrudService<T, ID> {
     Set<T> findAll();
-    T save(T entity);
-    T findById(Long id);
+    T save(ID id, T entity);
+    T findById(ID id);
+    T delete(T object);
 }
