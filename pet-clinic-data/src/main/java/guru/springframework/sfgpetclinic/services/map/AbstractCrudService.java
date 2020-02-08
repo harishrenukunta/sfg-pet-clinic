@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public abstract class AbstractCrudService<T, ID> implements CrudService<T, ID> {
+public abstract class AbstractCrudService<T, ID>  {
 
     protected Map<ID, T> map = new HashMap<>();
 
