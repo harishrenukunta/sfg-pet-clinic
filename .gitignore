@@ -29,3 +29,9 @@ build/
 
 ### VS Code ###
 .vscode/
+/pet-clinic-web/target/
+/pet-clinic-data/target/
+/sfg-pet-clinic/target/
+/target/
+/pet-clinic-web/target/
+/pet-clinic-data/target/
