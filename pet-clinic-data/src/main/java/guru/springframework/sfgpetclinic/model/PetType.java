@@ -10,7 +10,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @AllArgsConstructor
-public class PetType {
+public class PetType extends BaseEntity {
     String name;
 
 }
