@@ -8,7 +8,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Data
 public class Pet  extends BaseEntity {
+    String name;
     PetType petType;
-    LocalDate birthDates;
+    LocalDate birthDate;
     Owner owner;
 }
