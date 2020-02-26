@@ -15,7 +15,7 @@ public class VetController {
     @Autowired
     private VetService vetService;
 
-    @RequestMapping({"/vets", "/vets/index", "/vets/index.html"})
+    @RequestMapping({"/vets", "/vets/index", "/vets/index.html", "/vets.html"})
     public String listAllVets(Model model){
         final Set<Vet> allVets = vetService.findAll();
         model.addAttribute("vets", allVets);
