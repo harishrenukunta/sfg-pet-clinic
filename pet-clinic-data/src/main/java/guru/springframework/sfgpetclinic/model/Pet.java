@@ -2,9 +2,12 @@ package guru.springframework.sfgpetclinic.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.engine.internal.Cascade;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @NoArgsConstructor
 @Data
@@ -24,4 +27,7 @@ public class Pet  extends BaseEntity {
     @ManyToOne
     @JoinColumn(name="owner_id")
     Owner owner;
+
+    @OneToMany(cascade=CascadeType.ALL, mappedBy="pet")
+    Set<Visit> visits = new HashSet<>();
 }
