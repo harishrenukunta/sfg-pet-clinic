@@ -10,4 +10,6 @@ import java.util.Optional;
 @Repository
 public interface OwnerRepository extends CrudRepository<Owner, Long> {
     public Optional<Owner> findOwnerById(final Long id);
+
+    public Owner findByLastname(final String name);
 }

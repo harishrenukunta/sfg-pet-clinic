@@ -19,4 +19,9 @@ public class Person extends BaseEntity {
     @Column(name="last_name")
     String lastname;
 
+    public Person setFirstname(final String fname){
+        this.firstname = fname;
+        return this;
+    }
+
 }
