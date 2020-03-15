@@ -16,8 +16,16 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @Entity
 @Table(name="types")
-public class PetType extends BaseEntity {
+public class PetType extends BaseEntity implements Cloneable {
     @Column(name="name")
     String name;
+
+    public PetType clone() throws CloneNotSupportedException {
+        PetType pt1 = (PetType)super.clone();
+        pt1.setName(this.getName());
+        return pt1;
+
+    }
+
 
 }
