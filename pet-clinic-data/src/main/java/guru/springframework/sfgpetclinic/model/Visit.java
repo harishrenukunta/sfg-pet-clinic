@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name="visits")
-public class Visit extends BaseEntity {
+public class Visit extends BaseEntity implements Cloneable {
 
     @Column(name="visit_date")
     private LocalDate date;
@@ -39,5 +39,21 @@ public class Visit extends BaseEntity {
 
     public void setPet(Pet pet) {
         this.pet = pet;
+    }
+
+    public Visit clone(){
+        Visit v1 = null;
+        try {
+            v1 = (Visit)super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Exception when cloning. Exception msg:" + e.getMessage());
+        }
+        return v1;
+    }
+
+    @Override
+    public String toString(){
+        return String.format("%s[id=%s desc=%s pet=%s]", this.getClass(), this.getId(), this.getDescription(), this.getPet().getName());
     }
 }
