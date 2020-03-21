@@ -2,7 +2,6 @@ package guru.springframework.sfgpetclinic.bootstrap;
 
 import guru.springframework.sfgpetclinic.model.*;
 import guru.springframework.sfgpetclinic.services.*;
-import guru.springframework.sfgpetclinic.services.map.AbstractCrudService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -17,14 +16,16 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final PetService petService;
-    private SpecialityService specialityService;
+    private final SpecialityService specialityService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, PetService petService, SpecialityService specialityService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, PetService petService, SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.petService = petService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
 
@@ -99,5 +100,18 @@ public class DataLoader implements CommandLineRunner {
 
         vetService.save(vet1);
         vetService.save(vet2);
+
+        Visit dogVisit = new Visit();
+        dogVisit.setDate(LocalDate.of(2020,01,23));
+        dogVisit.setDescription("Leg fracture");
+        dogVisit.setPet(harishDogPet);
+        visitService.save(dogVisit);
+
+        Visit catVisit = new Visit();
+        catVisit.setDate(LocalDate.of(2020, 02, 12));
+        catVisit.setDescription("Indigestion");
+        catVisit.setPet(anilCatPet);
+        visitService.save(catVisit);
+
     }
 }
