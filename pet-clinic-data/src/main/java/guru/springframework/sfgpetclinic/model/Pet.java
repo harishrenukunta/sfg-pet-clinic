@@ -1,7 +1,6 @@
 package guru.springframework.sfgpetclinic.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.engine.internal.Cascade;
 
 import javax.persistence.*;
@@ -11,8 +10,10 @@ import java.util.Set;
 
 @NoArgsConstructor
 @Data
+@AllArgsConstructor
 @Entity
 @Table(name="pets")
+@Builder
 public class Pet  extends BaseEntity implements Cloneable{
     @Column(name="name")
     String name;

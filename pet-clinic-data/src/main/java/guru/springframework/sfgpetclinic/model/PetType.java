@@ -1,9 +1,6 @@
 package guru.springframework.sfgpetclinic.model;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.Column;
@@ -16,6 +13,7 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @Entity
 @Table(name="types")
+@Builder
 public class PetType extends BaseEntity implements Cloneable {
     @Column(name="name")
     String name;
@@ -26,6 +24,4 @@ public class PetType extends BaseEntity implements Cloneable {
         return pt1;
 
     }
-
-
 }

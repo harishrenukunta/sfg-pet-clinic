@@ -1,22 +1,31 @@
 package guru.springframework.sfgpetclinic.model;
 
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 @Table(name="visits")
+@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Visit extends BaseEntity implements Cloneable {
 
     @Column(name="visit_date")
-    private LocalDate date;
+    LocalDate date;
 
     @Column(name="description")
-    private String description;
+    String description;
 
     @ManyToOne
     @JoinColumn(name="pet_id")
-    private Pet pet;
+    Pet pet;
 
+    /*
     public LocalDate getDate() {
         return date;
     }
@@ -41,6 +50,8 @@ public class Visit extends BaseEntity implements Cloneable {
         this.pet = pet;
     }
 
+     */
+
     public Visit clone(){
         Visit v1 = null;
         try {
@@ -50,10 +61,5 @@ public class Visit extends BaseEntity implements Cloneable {
             throw new RuntimeException("Exception when cloning. Exception msg:" + e.getMessage());
         }
         return v1;
-    }
-
-    @Override
-    public String toString(){
-        return String.format("%s[id=%s desc=%s pet=%s]", this.getClass(), this.getId(), this.getDescription(), this.getPet().getName());
     }
 }
