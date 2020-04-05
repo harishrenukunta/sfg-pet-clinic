@@ -45,7 +45,7 @@
 
                     <exclusion>
                         <groupId>junit</groupId>
-                        <artifactId>junit:junit:4.13</artifactId>
+                        <artifactId>junit</artifactId>
                     </exclusion>
 
             </exclusions>
