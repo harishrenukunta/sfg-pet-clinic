@@ -9,7 +9,8 @@ import java.time.LocalDate;
 @Entity
 @Table(name="visits")
 @Builder
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)

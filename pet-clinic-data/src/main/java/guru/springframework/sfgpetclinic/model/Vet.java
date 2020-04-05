@@ -8,7 +8,8 @@ import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 @Builder(builderMethodName = "VetBuilder")
 @Entity
 @Table(name="vets")

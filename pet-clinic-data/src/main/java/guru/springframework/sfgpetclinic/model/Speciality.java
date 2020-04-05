@@ -9,7 +9,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="specialities")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -17,16 +18,6 @@ public class Speciality extends BaseEntity implements Cloneable {
 
     @Column(name="description")
     private String description;
-
-    /*
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-     */
 
     public Speciality clone() throws CloneNotSupportedException {
         Speciality sp1 = (Speciality)super.clone();

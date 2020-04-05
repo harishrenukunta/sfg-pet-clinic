@@ -7,13 +7,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Data
+@Getter
+@Setter
+@ToString
 @NoArgsConstructor
-@FieldDefaults(level = AccessLevel.PRIVATE)
 @AllArgsConstructor
+@Builder
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 @Table(name="types")
-@Builder
 public class PetType extends BaseEntity implements Cloneable {
     @Column(name="name")
     String name;
