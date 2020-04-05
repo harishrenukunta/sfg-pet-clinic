@@ -2,6 +2,7 @@ package guru.springframework.sfgpetclinic.controller;
 
 
 import guru.springframework.sfgpetclinic.services.OwnerService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/owners")
+@RequiredArgsConstructor
 public class OwnerController {
 
-    @Autowired
-    private OwnerService ownerService;
+    private final OwnerService ownerService;
 
     @RequestMapping({"", "/", "/index", "/index.html"})
     public String listAllOwners(final Model model){
